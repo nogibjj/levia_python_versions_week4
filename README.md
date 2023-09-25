@@ -1,6 +1,13 @@
-# Statistics Using Python
+# Goals for This Project
 
-Welcome to my project! This repository contains all the code and resources related to my awesome project.
+Requirements
+- Set up a GitHub Actions workflow
+- Test across at least 3 different Python versions
+
+
+# Running Results
+![image](https://github.com/nogibjj/levia_python_versions_week4/assets/73449544/06434202-8282-4c71-91be-f626321900d1)
+
 
 ## Table of Contents
 

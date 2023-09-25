@@ -13,15 +13,15 @@ def calculate_statistics(file_path):
         data = data[selected_columns]
 
         # Calculating mean, median
-        mean = data.mean()
-        median = data.median()
+        # mean = data.mean()
+        # .map_cols(lambda col: col.round(1))
+        # median = data.median()
+        # .map_cols(lambda col: col.round(1))
 
-        mean = mean.round(1)
-        median = median.round(1)
-
-        return {'mean': mean, 'median': median}
-    except pl.errors.EmptyDataError as e:
-        return str(e)
+        return data.describe()
+    except pl.ColumnNotFoundError as e:
+    # Handle the exception, e.g., print an error message
+        print(f"ColumnNotFoundError: {e}")
 
 # Function to visualize specific columns as histograms
 def visualize_data(file_path, save_path=None):
@@ -75,8 +75,9 @@ def calculate_correlation(file_path):
         artist_popularity_correlation = correlation_matrix['artist_popularity']
 
         return artist_popularity_correlation
-    except pl.errors.EmptyDataError as e:
-        return str(e)
+    except pl.ColumnNotFoundError as e:
+    # Handle the exception, e.g., print an error message
+        print(f"ColumnNotFoundError: {e}")
 
 if __name__ == "__main__":
     dataset_path = "playlist.csv"
